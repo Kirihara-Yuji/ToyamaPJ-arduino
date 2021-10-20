@@ -18,8 +18,8 @@ float timer_start2, timer_delta2;
 
 //===============時間管理用変数 ProgramedRPM(millis())=================
 const int mode = 1; //0でスイッチコントローラ式　1であらかじめプログラムした時間変化で進む
-const float time_schedule[4] = { 1.0/60.0f,2.0f/60.0f,0.5/60.0f,0.5/60.0f }; //回転数を変更させる時間(開始からの累計時間ではなく，各区間の長さ:h)
-const float RPM_schedule[4] = { 30.0f,-1.0f,60.0f,240.0f }; //回転数, time_scheduleと対応，-1.0で線形変化
+const float time_schedule[4] = { 1/60,2/60,0.5/60,0.5/60 }; //回転数を変更させる時間(開始からの累計時間ではなく，各区間の長さ:h)
+const float RPM_schedule[4] = { 30,-1,60,240 }; //回転数, time_scheduleと対応，-1.0で線形変化
 int length=(int)sizeof(RPM_schedule) / sizeof(float);
 float time_length;
 
